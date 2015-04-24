@@ -1,0 +1,61 @@
+.profile h3{
+	font-size: 18px;
+	padding: 0!important;
+	margin: 0;
+}
+
+.profile h2{
+	color: #FFFFFF;
+	font-size: 20px;
+}
+
+.profile{
+	background-color: #032340;
+	padding: 10px;
+	padding-bottom: 30px;
+	height: auto;
+}
+
+#Profile {
+	margin-top: -140px!important;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+#logo {
+	width: 75%;
+}
+
+.navbar-header {
+	height: 100px;
+	padding-bottom: 40px;
+}
+
+.navbar-nav {
+	margin-top: 30px;
+}
+
+.page-body img {
+	width: 50%;
+	border: 15px solid white;
+}
+
+#photo_stats {
+	width: 520px;
+}
+
+.page-body {
+	width: 1050px;
+  	margin-left: auto;
+  	margin-right: auto;
+}

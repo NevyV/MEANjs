@@ -1,0 +1,20 @@
+<section data-ng-controller="ProfilesController" data-ng-init="find()">
+    <div id="Profile">
+    <div class="page-header">
+        <h1><span data-ng-bind="authentication.user.displayName"></span>'s Profile</h1>
+    </div>
+    <div class="profile col-md-12">
+    <div class="col-md-3">
+        <img src="http://placehold.it/200x250"/>
+    </div>
+    <div class="col-md-4">
+        <h2>Username: </h2><h3><span data-ng-bind="authentication.user.username"></span></h3>
+        <h2>Email:</h2><h3><span data-ng-bind="authentication.user.email"></span></h3>
+        <h2>Gender: </h2><h3><span data-ng-bind="authentication.user.gender"></span></h3> 
+    </div>
+    <div class="col-md-5">
+        <h2>About <span data-ng-bind="authentication.user.firstName"></span>:</h2><h3><span data-ng-bind="authentication.user.about"></h3>  
+    </div>
+</div>
+</div>
+</section>
