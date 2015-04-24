@@ -1,7 +1,8 @@
 'use strict';
-
-angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
-	function($scope, $stateParams, $location, Authentication, Articles) {
+//add socket to dependencies
+angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Socket', 'Articles',
+	//add socket to parameters
+	function($scope, $stateParams, $location, Authentication, Socket, Articles) {
 		$scope.authentication = Authentication;
 
 		$scope.create = function() {
@@ -11,7 +12,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 			});
 			article.$save(function(response) {
 				$location.path('articles/' + response._id);
-
 				$scope.title = '';
 				$scope.content = '';
 			}, function(errorResponse) {
