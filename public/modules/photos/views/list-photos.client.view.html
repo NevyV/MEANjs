@@ -16,6 +16,12 @@
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="photo.name"></h4>
 			<image src="{{photo.image}}" style="max-width:100%" />
+            <div>
+                <h2>
+                    Likes: <span data-ng-bind="photo.likes.length-1"></span>
+                    Views: <span data-ng-bind="photo.views"></span>
+                </h2>
+            </div>
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!photos.$resolved || photos.length">

@@ -1,6 +1,6 @@
 'use strict';
 
-// Configuring the Articles module
+// Configuring the Photos module
 angular.module('photos').run(['Menus',
 	function(Menus) {
 		// Set top bar menu items
