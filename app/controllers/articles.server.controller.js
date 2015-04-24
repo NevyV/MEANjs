@@ -23,7 +23,8 @@ exports.create = function(req, res) {
 		} else {
 			var socketio = req.app.get('socketio'); //makes a socket instance
 			socketio.emit('article.created', article); //sends the socket event to all current users
-			res.json(article);
+			
+				res.json(article);
 		}
 	});
 };
