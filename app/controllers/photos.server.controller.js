@@ -22,12 +22,15 @@ exports.create = function(req, res) {
     console.log(photo.image);
   }  else
     photo.image='default.jpg';
+  
   photo.save(function(err) {
     if (err) {
       return res.status(400).send({
 	message: errorHandler.getErrorMessage(err)
       });
     } else {
+      var socketio = req.app.get('socketio'); // makes a socket instance ADDED IN
+      socketio.emit('article.created', article); // sends the socket event to all current users ADDED IN
       res.redirect('/#!/photos/'+photo._id); // redirection to '/'jsonp(photo);
     }
   });
