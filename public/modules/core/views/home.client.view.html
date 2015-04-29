@@ -31,32 +31,31 @@
 	    	<h1 ng-show="authentication.user._id">Timeline</h1>
 
 	    	<section data-ng-controller="ArticlesController" data-ng-init="find()">
-	    		
 		    	<section data-ng-controller="PhotosController" data-ng-init="find()">
-
 					<div class="list-group" ng-show="authentication.user._id">
 
-					<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
-						<small class="list-group-item-text">
-							Posted on
-							<span data-ng-bind="article.created | date:'mediumDate'"></span>
-							by
-							<span data-ng-bind="article.user.displayName"></span>
-						</small>
-						<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
-						<p class="list-group-item-text" data-ng-bind="article.content"></p>
-					</a>
+						<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
+							<small class="list-group-item-text">
+								Posted on
+								<span data-ng-bind="article.created | date:'medium'"></span>
+								by
+								<span data-ng-bind="article.user.displayName"></span>
+							</small>
+							<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
+							<p class="list-group-item-text" data-ng-bind="article.content"></p>
+						</a>
 
-			        <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item">
-						<small class="list-group-item-text">
-							Posted on
-							<span data-ng-bind="photo.created | date:'medium'"></span>
-							by
-							<span data-ng-bind="photo.user.displayName"></span>
-						</small>
-						<h4 class="list-group-item-heading" data-ng-bind="photo.name"></h4>
-						<image src="{{photo.image}}" style="max-width:100%" />
-			        </a>
+				        <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item">
+							<small class="list-group-item-text">
+								Posted on
+								<span data-ng-bind="photo.created | date:'medium'"></span>
+								by
+								<span data-ng-bind="photo.user.displayName"></span>
+							</small>
+							<h4 class="list-group-item-heading" data-ng-bind="photo.name"></h4>
+							<image src="{{photo.image}}" style="max-width:100%" />
+				        </a>
+			    	</div>
 			    </section>
 			</section>
 	    <!-- End of Users Timeline-->
