@@ -2,8 +2,9 @@
 	<h3 class="col-md-12 text-center">Edit your profile</h3>
 		<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
 			<fieldset id="edit">
-				<div class="col-md-offset-4 col-md-3">
+				<div class="col-md-offset-4 col-md-3" style="margin-left:50%;margin-right:50%;">
 					<div class="form-group">
+						<br>
 						<label for="firstName">First Name</label>
 						<input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
 					</div>
@@ -21,6 +22,7 @@
 					</div>
 					<div class="form-group">
 						<label for="gender">Gender</label>
+						<br>
 						<select>
 						  <option value="Male">Male</option>
 						  <option value="Female">Female</option>
@@ -31,15 +33,12 @@
 						<label for="about">About Me</label>
 						<textarea type="text" id="about" name="about" class="form-control" data-ng-model="user.about" placeholder="About"></textarea>
 					</div>
-					<div class="form-group">
-						<label for="about">Profile Picture</label>
-						<input type="file" name="image" data-ng-model="imageHolder.image" id="image" accept="image/*" required/><br/>
-					</div>
 				
 			</div>
             <div class="col-md-2"></div>                 
             <div class="text-center form-group">
-                <button type="submit" class="text-center btn btn-large btn-primary">Save Profile</button>
+            	<br>
+                <button type="submit" class="text-center btn btn-large btn-primary" style="margin-left:55%;">Save Profile</button>
             </div>
             <div data-ng-show="success" class="text-center text-success">
                 <strong>Profile Saved Successfully</strong>
