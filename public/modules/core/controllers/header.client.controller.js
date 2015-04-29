@@ -16,11 +16,11 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 		});
 		Socket.on('article.created', function(article) {
 			console.log(article);
-                  $rootScope.myValue=true;
+                  $rootScope.myValuePost=true;
 		});
 		Socket.on('photo.created', function(photo) {
 			console.log(photo);
-                  $rootScope.myValue=true;
+                  $rootScope.myValuePhoto=true;
 		});
 	}
 ]);
