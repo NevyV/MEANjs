@@ -8,23 +8,25 @@
             <a href="/#!/photos/create" class="text-center btn btn-large btn-primary">Upload a Photo</a>
         </div>
     </div>
-    <div class="list-group">
-        <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item">
-			<small class="list-group-item-text">
-				Posted on
-				<span data-ng-bind="photo.created | date:'medium'"></span>
-				by
-				<span data-ng-bind="photo.user.displayName"></span>
-			</small>
-			<h4 class="list-group-item-heading" data-ng-bind="photo.name"></h4>
-			<image src="{{photo.image}}" style="max-width:100%" />
-            <div>
-                <h2>
-                    Likes: <span data-ng-bind="photo.likes.length-1"></span>
-                    Views: <span data-ng-bind="photo.views"></span>
-                </h2>
-            </div>
-        </a>
+    <div id="photos_container">
+        <div class="list-group list_center photos_display">
+            <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item separate_photos">
+    			<small class="list-group-item-text">
+    				Posted on
+    				<span data-ng-bind="photo.created | date:'medium'"></span>
+    				by
+    				<span data-ng-bind="photo.user.displayName"></span>
+    			</small>
+    			<h4 class="list-group-item-heading" data-ng-bind="photo.name"></h4>
+    			<image src="{{photo.image}}" style="max-width:100%" />
+                <div>
+                    <h2>
+                        Likes: <span data-ng-bind="photo.likes.length-1"></span>
+                        Views: <span data-ng-bind="photo.views"></span>
+                    </h2>
+                </div>
+            </a>
+        </div>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!photos.$resolved || photos.length">
     	No Photos yet, why don't you <a href="/#!/photos/create">upload one</a>?

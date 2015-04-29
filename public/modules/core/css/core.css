@@ -45,4 +45,25 @@
 	padding: 5px;
 	width: 100%;
 	margin-bottom: 10px;
+	padding-bottom: 20px;
+}
+
+.list_center {
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.photos_display {
+	width: 20%;
+  	margin-left: 0;
+  	display: -webkit-inline-box;
+}
+
+.separate_photos {
+	margin-right: 20px;
+}
+
+#photos_container {
+	max-width: 1200px;
 }
