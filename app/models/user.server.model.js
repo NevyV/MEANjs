@@ -45,6 +45,10 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true
 	},
+	gender: {
+		type: String,
+		default: ''
+	},
 	email: {
 		type: String,
 		trim: true,

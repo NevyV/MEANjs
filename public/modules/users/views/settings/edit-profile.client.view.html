@@ -23,7 +23,7 @@
 					<div class="form-group">
 						<label for="gender">Gender</label>
 						<br>
-						<select>
+						<select id="gender" name="gender" class="form-control" data-ng-model="user.gender" placeholder="Gender">
 						  <option value="Male">Male</option>
 						  <option value="Female">Female</option>
 						  <option value="Rather Not Say">Rather not say</option>
@@ -40,7 +40,7 @@
             	<br>
                 <button type="submit" class="text-center btn btn-large btn-primary" style="margin-left:55%;">Save Profile</button>
             </div>
-            <div data-ng-show="success" class="text-center text-success">
+            <div data-ng-show="success" class="text-center text-success" style="margin-left:38%">
                 <strong>Profile Saved Successfully</strong>
             </div>
             <div data-ng-show="error" class="text-center text-danger">
