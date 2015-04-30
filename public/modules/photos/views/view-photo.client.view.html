@@ -30,12 +30,37 @@
 				</h2>
 			</div>
 		</div>
+		<!--comment section-->
+	<div>
+			<section data-ng-controller="CommentsController" data-ng-init="find()" >
+			    <div class="page-header">
+			        <h1>Comments</h1>
+			    </div>
+			    <div class="list-group">
+			        <a data-ng-repeat="comment in comments"  data-ng-href="#!/comments/{{comment._id}}" class="list-group-item">
+						<small class="list-group-item-text">
+							Posted on
+							<span data-ng-bind="comment.created | date:'medium'"></span>
+							by
+							<span data-ng-bind="comment.user.displayName"></span>
+						</small>
+						<h4 class="list-group-item-heading" data-ng-bind="comment.name"></h4>
+			        </a>
+
+			    </div>
+
+			    <div class="alert alert-warning text-center" data-ng-hide="!comments.$resolved || comments.length">
+			    	No Comments yet, why don't you <a href="/#!/comments/create">create one</a>?
+			    </div>
+			</section>
+	</div>
+<!--END comment section-->
 		<div>
 			<h2>
 			
 				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}" ng-show="!isLiked && authentication.user._id"><i class="glyphicon glyphicon-heart"></i></button>
 
-				<a class="text-center btn btn-large btn-primary" >Leave a comment</button>
+				<a href="/#!/comments/create" class="text-center btn btn-large btn-primary" >Leave a comment</a>
 				
 			</h2>
 		</div>
