@@ -1,8 +1,8 @@
 'use strict';
 
 // Comments controller
-angular.module('comments').controller('CommentsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Comments',
-	function($scope, $stateParams, $location, Authentication, Comments) {
+angular.module('comments').controller('CommentsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Socket', 'Comments',
+	function($scope, $stateParams, $location, Authentication, Socket, Comments) {
 		$scope.authentication = Authentication;
 
 		// Create new Comment

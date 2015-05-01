@@ -22,8 +22,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 			console.log(photo);
                   $rootScope.myValuePhoto=true;
 		});
-		Socket.on('photo.created', function(photo) {
-			console.log(photo);
+		Socket.on('comment.created', function(comment) {
+			console.log(comment);
                   $rootScope.myValueComment=true;
 		});
 	}
