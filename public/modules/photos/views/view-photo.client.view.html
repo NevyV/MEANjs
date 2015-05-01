@@ -1,70 +1,81 @@
 <section data-ng-controller="PhotosController" data-ng-init="findOne()">
-	<div class="page-header">
-		<h1 data-ng-bind="photo.name"></h1>
-	</div>
-	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == photo.user._id))">
-		<a id="edit_button" class="btn btn-primary" href="/#!/photos/{{photo._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a id="delete_button" class="btn btn-primary" data-ng-click="remove();">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</div>
-	<div>
-		<div class="page-body">
-			<image ng-src="{{photo.image}}"/>
+	<div class="login_toview_form" ng-hide="authentication.user._id">
+		<div class="please_log_in">
+			<p>*Please Log in to view this content</p>
 		</div>
-		<div class="page-body" id="photo_stats">
-			<div>
-				<h2>
-					Posted on
-					<span data-ng-bind="photo.created | date:'mediumDate'"></span>
-					by
-					<span data-ng-bind="photo.user.displayName"></span>
-				</h2>
-			</div>
-			<div>
-				<h2>
-					Likes: <span data-ng-bind="photo.likes.length-1"></span>
-					Views: <span data-ng-bind="photo.views"></span>
-				</h2>
-			</div>
+
+		<div class="form-group">
+            <a href="/#!/" class="text-center btn btn-large btn-primary">Log In</a>
+        </div>
+	</div>	
+	<div id="photos_page_user" ng-show="authentication.user._id">
+		<div class="page-header">
+			<h1 data-ng-bind="photo.name"></h1>
+		</div>
+		<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == photo.user._id))">
+			<a id="edit_button" class="btn btn-primary" href="/#!/photos/{{photo._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i>
+			</a>
+			<a id="delete_button" class="btn btn-primary" data-ng-click="remove();">
+				<i class="glyphicon glyphicon-trash"></i>
+			</a>
 		</div>
 		<div>
-			<h2>
-				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}" ng-show="!isLiked && authentication.user._id"><i class="glyphicon glyphicon-heart"></i></button>
-			</h2>
-		</div>
-
-	</div>
-		<!--comment section-->
-		<section data-ng-controller="CommentpicsController" data-ng-init="find()">
-		    <div class="page-header">
-		        <h1>Comments for Photos</h1>
-		        <div ng-show="myValueCommentpic" class="ng-hide" style="color:#cccccc; text-align:center; font-size: 20px;margin-top: -50px;"> New Photo Comment! </div>
-
-		    </div>
-		    <div class="list-group">
-		        <a data-ng-repeat="commentpic in commentpics" data-ng-href="#!/commentpics/{{commentpic._id}}" class="list-group-item">
-					<small class="list-group-item-text">
+			<div class="page-body">
+				<image ng-src="{{photo.image}}"/>
+			</div>
+			<div class="page-body" id="photo_stats">
+				<div>
+					<h2>
 						Posted on
-						<span data-ng-bind="commentpic.created | date:'medium'"></span>
+						<span data-ng-bind="photo.created | date:'mediumDate'"></span>
 						by
-						<span data-ng-bind="commentpic.user.displayName"></span>
-					</small>
-					<h4 class="list-group-item-heading" data-ng-bind="commentpic.name"></h4>
-		        </a>
-		    </div>
-		    <div class="alert alert-warning text-center" data-ng-hide="!commentpics.$resolved || commentpics.length">
-		    	No Commentpics yet, why don't you <a href="/#!/commentpics/create">create one</a>?
-		    </div>
-		</section>
-<!--END comment section-->
-		<div>
-			<h2>
-				<a href="/#!/commentpics/create" class="text-center btn btn-large btn-primary">Leave a comment</a>
-			</h2>
+						<span data-ng-bind="photo.user.displayName"></span>
+					</h2>
+				</div>
+				<div>
+					<h2>
+						Likes: <span data-ng-bind="photo.likes.length-1"></span>
+						Views: <span data-ng-bind="photo.views"></span>
+					</h2>
+				</div>
+			</div>
+			<div>
+				<h2>
+					<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}" ng-show="!isLiked && authentication.user._id"><i class="glyphicon glyphicon-heart"></i></button>
+				</h2>
+			</div>
+
 		</div>
-		<br>
-		<br>
+	<!--comment section-->
+			<section data-ng-controller="CommentpicsController" data-ng-init="find()">
+			    <div class="page-header">
+			        <h1>Comments for Photos</h1>
+			        <div ng-show="myValueCommentpic" class="ng-hide" style="color:#cccccc; text-align:center; font-size: 20px;margin-top: -50px;"> New Photo Comment! </div>
+
+			    </div>
+			    <div class="list-group">
+			        <a data-ng-repeat="commentpic in commentpics" data-ng-href="#!/commentpics/{{commentpic._id}}" class="list-group-item">
+						<small class="list-group-item-text">
+							Posted on
+							<span data-ng-bind="commentpic.created | date:'medium'"></span>
+							by
+							<span data-ng-bind="commentpic.user.displayName"></span>
+						</small>
+						<h4 class="list-group-item-heading" data-ng-bind="commentpic.name"></h4>
+			        </a>
+			    </div>
+			    <div class="alert alert-warning text-center" data-ng-hide="!commentpics.$resolved || commentpics.length">
+			    	No Commentpics yet, why don't you <a href="/#!/commentpics/create">create one</a>?
+			    </div>
+			</section>
+	<!--END comment section-->
+			<div>
+				<h2>
+					<a href="/#!/commentpics/create" class="text-center btn btn-large btn-primary">Leave a comment</a>
+				</h2>
+			</div>
+			<br>
+			<br>
+		</div>
 </section>
