@@ -1,8 +1,8 @@
 'use strict';
 
 // Commentpics controller
-angular.module('commentpics').controller('CommentpicsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Commentpics',
-	function($scope, $stateParams, $location, Authentication, Commentpics) {
+angular.module('commentpics').controller('CommentpicsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Socket', 'Commentpics',
+	function($scope, $stateParams, $location, Authentication, Socket, Commentpics) {
 		$scope.authentication = Authentication;
 
 		// Create new Commentpic
