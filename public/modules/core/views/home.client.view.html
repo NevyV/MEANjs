@@ -31,12 +31,13 @@
 	    	
 <h1 class="timeline" ng-show="authentication.user._id">Timeline</h1>	    	
 	    	<div class="timelineContent">
-	    	<section data-ng-controller="ProfilesController" data-ng-init="find()">
+	    	<section ng-show="authentication.user._id" data-ng-controller="ProfilesController" data-ng-init="find()">
 			    <div id="profile">
 				    <div class="profile col-md-3">
 				    <div class="page-header TLHeader">
 				        <h2><span data-ng-bind="authentication.user.displayName"></span>'s Profile</h2>
 				    </div>
+				    <img class="center-block" style="padding-top: 15px;" src="modules/core/img/brand/profile_img.png">
 					    <div>
 					        <h2>Username: </h2><h3><span data-ng-bind="authentication.user.username"></span></h3>
 					        <h2>Email:</h2><h3><span data-ng-bind="authentication.user.email"></span></h3>
