@@ -66,7 +66,6 @@
 
 #photos_container {
 	max-width: 1200px;
-<<<<<<< Updated upstream
 	overflow: scroll;
   	height: 415px;
   	margin-bottom: 80px;
@@ -74,7 +73,6 @@
 
 .photos_list_body {
 	margin-top: -100px;
-=======
 }
 
 .timelineContent{
