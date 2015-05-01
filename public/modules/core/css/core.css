@@ -66,59 +66,11 @@
 
 #photos_container {
 	max-width: 1200px;
-<<<<<<< Updated upstream
 	overflow: scroll;
-  	height: 415px;
+  	height: 410px;
   	margin-bottom: 80px;
 }
 
 .photos_list_body {
 	margin-top: -100px;
-=======
-}
-
-.timelineContent{
-	margin-top: -10px;
-}
-
-.profile h3{
-	font-size: 14px;
-	padding: 0!important;
-	margin: 0;
-	font-weight: 200;
-}
-
-.profile h2{
-	font-weight: 300;
-	color: #FFFFFF;
-	font-size: 16px;
-
-}
-
-.TLHeader{
-	margin: 0;
-	padding:0;
-}
-
-.profile{
-	background-color: #032340;
-	padding: 5px;
-	padding-bottom: 30px;
-	height: auto;
-	margin-top:20px;
-	padding-top: 0;
-}
-
-#profile{
-	margin-top: -20px;
-}
-
-.timeline{
-	padding: 0;
-	margin: 0;
-}
-
-.timelineContent{
-	margin-top: 0px;
->>>>>>> Stashed changes
 }
