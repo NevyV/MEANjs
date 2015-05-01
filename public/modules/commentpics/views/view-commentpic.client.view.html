@@ -3,10 +3,10 @@
 		<h1 data-ng-bind="commentpic.name"></h1>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == commentpic.user._id))">
-		<a class="btn btn-primary" href="/#!/commentpics/{{commentpic._id}}/edit">
+		<a id="edit_button" class="btn btn-primary" href="/#!/commentpics/{{commentpic._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>
-		<a class="btn btn-primary" data-ng-click="remove();">
+		<a id="delete_button" class="btn btn-primary" data-ng-click="remove();">
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
 	</div>
