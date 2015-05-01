@@ -1,24 +1,22 @@
-.profilePage h3{
+.profile h3{
 	font-size: 18px;
 	padding: 0!important;
 	margin: 0;
 }
 
-.profilePage h2{
+.profile h2{
 	color: #FFFFFF;
 	font-size: 20px;
 }
 
-.profilePage{
-	margin-top: 30px;
-	padding-top: 10px;
+.profile{
 	background-color: #032340;
 	padding: 10px;
 	padding-bottom: 30px;
 	height: auto;
 }
 
-#profilePage{
+#Profile {
 	margin-top: -140px!important;
 }
 .undecorated-link:hover {
