@@ -26,9 +26,5 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 			console.log(comment);
                   $rootScope.myValueComment=true;
 		});
-		Socket.on('commentpics.created', function(commentpics) {
-			console.log(commentpics);
-                  $rootScope.myValueCommentpics=true;
-		});
 	}
 ]);
