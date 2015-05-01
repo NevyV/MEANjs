@@ -1,14 +1,20 @@
 <section data-ng-controller="CommentpicsController">
     <div class="page-header">
-        <h1>New Commentpic</h1>
+        <h1>New Comment for Photo</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
+                    <label class="control-label" for="name">Comment</label>
                     <div class="controls">
-                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                        <textarea type="text" data-ng-model="name" id="name" class="form-control" placeholder="Comment" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="content">Comment</label>
+                    <div class="controls">
+                        <textarea name="content" data-ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Comment"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
