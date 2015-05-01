@@ -21,7 +21,9 @@ exports.create = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(commentpic);
+			var socketio = req.app.get('socketio'); //makes a socket instance
+			socketio.emit('commentpic.created', commentpic); //sends the socket event to all current users
+			res.json(commentpic);
 		}
 	});
 };
