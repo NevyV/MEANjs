@@ -28,12 +28,28 @@
 	    	</div>
 
 	    	<!--Users Timeline-->
-	    	<h1 ng-show="authentication.user._id">Timeline</h1>
-
+	    	
+<h1 class="timeline" ng-show="authentication.user._id">Timeline</h1>	    	
+	    	<div class="timelineContent">
+	    	<section data-ng-controller="ProfilesController" data-ng-init="find()">
+			    <div id="profile">
+				    <div class="profile col-md-3">
+				    <div class="page-header TLHeader">
+				        <h2><span data-ng-bind="authentication.user.displayName"></span>'s Profile</h2>
+				    </div>
+					    <div>
+					        <h2>Username: </h2><h3><span data-ng-bind="authentication.user.username"></span></h3>
+					        <h2>Email:</h2><h3><span data-ng-bind="authentication.user.email"></span></h3>
+					        <h2>Gender: </h2><h3><span data-ng-bind="authentication.user.gender"></span></h3> 
+					        <h2>About <span data-ng-bind="authentication.user.firstName"></span>:</h2><h3><span class="about" data-ng-bind="authentication.user.about"></h3>  
+					    </div>
+					</div>
+				</div>
+			</section>
 	    	<section data-ng-controller="ArticlesController" data-ng-init="find()">
 		    	<section data-ng-controller="PhotosController" data-ng-init="find()">
 					<div class="list-group" ng-show="authentication.user._id">
-						<div class="col-lg-6">
+						<div class="col-lg-4">
 							<h2>Posts</h2>
 						<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
 							<small class="list-group-item-text">
@@ -46,7 +62,7 @@
 							<p class="list-group-item-text" data-ng-bind="article.content"></p>
 						</a>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-5">
 						<h2>Photos</h2>
 				        <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item">
 							<small class="list-group-item-text">
@@ -67,3 +83,4 @@
 	    </div>
 	</div>
 </section>
+</div>
