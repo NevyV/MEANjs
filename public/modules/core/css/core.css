@@ -75,6 +75,7 @@
 	margin-top: -100px;
 }
 
+<<<<<<< Updated upstream
 .timelineContent{
 	margin-top: -10px;
 }
@@ -118,5 +119,12 @@
 
 .timelineContent{
 	margin-top: 0px;
+>>>>>>> Stashed changes
+=======
+#photos_container {
+ 	max-width: 1200px;
+ 	overflow: scroll;
+   	height: 410px;
+   	margin-bottom: 80px;
 >>>>>>> Stashed changes
 }
