@@ -101,15 +101,15 @@
 
 .profile{
 	background-color: #032340;
-	padding: 5px;
-	padding-bottom: 30px;
+	/*padding: 5px;
+	padding-bottom: 30px;*/
 	height: auto;
 	margin-top:20px;
 	padding-top: 0;
 }
 
-#profile{
-	margin-top: -20px;
+.profile{
+	/*margin-top: -20px;*/
 }
 
 .timeline{
@@ -119,12 +119,40 @@
 
 .timelineContent{
 	margin-top: 0px;
->>>>>>> Stashed changes
-=======
+}
 #photos_container {
  	max-width: 1200px;
  	overflow: scroll;
    	height: 410px;
    	margin-bottom: 80px;
->>>>>>> Stashed changes
+}
+
+.please_log_in p {
+	color: #ccc;
+  	text-align: center;
+}
+
+.login_profile {
+	background-color: #032340;
+	padding: 5px;
+	padding-bottom: 30px;
+	height: auto;
+	margin-top:20px;
+	padding-top: 0;
+}
+
+#home_page_login {
+	margin-top: 12px;
+}
+
+.login_form {
+	width: 170px;
+}
+
+.login_form_button {
+	width: 170px;
+}
+
+#button_login {
+	margin-left: -28px;
 }

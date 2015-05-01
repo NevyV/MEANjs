@@ -2,54 +2,60 @@
 	<div id="home_bg">
 
 		<div class="jumbotron">
-	    	<div class="container">
-	    		<div id="landing_page">
-		    	    <div id="instashare">
-		    	   		<img id="instasharelogo" src="modules/core/img/brand/instashare.png" alt="logo" ng-hide="authentication.user._id" />
-		    	   	</div>
-			       <section class="row" id="home_form" data-ng-controller="AuthenticationController">
-				        <form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
-				        <fieldset>
-							<div class="form-group">
-								<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username" ng-hide="authentication.user._id">
-							</div>
-							<div class="form-group">
-								<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password" ng-hide="authentication.user._id">
-							</div>
-							<div class="text-center form-group">
-								<button type="submit" class="btn btn-primary" ng-hide="authentication.user._id">Log in</button>
-							</div>
-
-							</fieldset>
-						</form>
-					</section>
-				</div>
-
-	    	</div>
 
 	    	<!--Users Timeline-->
 	    	
-<h1 class="timeline" ng-show="authentication.user._id">Timeline</h1>	    	
+			<h1 class="timeline">Timeline</h1>	    	
 	    	<div class="timelineContent">
-	    	<section ng-show="authentication.user._id" data-ng-controller="ProfilesController" data-ng-init="find()">
-			    <div id="profile">
-				    <div class="profile col-md-3">
-				    <div class="page-header TLHeader">
-				        <h2><span data-ng-bind="authentication.user.displayName"></span>'s Profile</h2>
-				    </div>
-				    <img class="center-block" style="padding-top: 15px;" src="modules/core/img/brand/profile_img.png">
-					    <div>
-					        <h2>Username: </h2><h3><span data-ng-bind="authentication.user.username"></span></h3>
-					        <h2>Email:</h2><h3><span data-ng-bind="authentication.user.email"></span></h3>
-					        <h2>Gender: </h2><h3><span data-ng-bind="authentication.user.gender"></span></h3> 
-					        <h2>About <span data-ng-bind="authentication.user.firstName"></span>:</h2><h3><span class="about" data-ng-bind="authentication.user.about"></h3>  
+	    	<section data-ng-controller="ProfilesController" data-ng-init="find()">
+
+	    		<div id="login_profile_notuser" ng-hide="authentication.user._id">
+					<div class="login_profile profile col-md-3">
+						<div id="home_page_login">
+				    	    <div id="instashare">
+				    	   		<img id="instasharelogo" src="modules/core/img/brand/instashare.png" alt="logo" ng-hide="authentication.user._id" />
+				    	   	</div>
+					       <section class="row" id="home_form" data-ng-controller="AuthenticationController">
+						        <form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
+						        <fieldset>
+									<div class="form-group login_form">
+										<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username" ng-hide="authentication.user._id">
+									</div>
+									<div class="form-group login_form">
+										<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password" ng-hide="authentication.user._id">
+									</div>
+									<div class="text-center form-group" id="button_login">
+										<button type="submit" class="btn btn-primary login_form" ng-hide="authentication.user._id">Log in</button>
+									</div>
+
+									</fieldset>
+								</form>
+							</section>
+						</div>	
+					</div>
+				</div>
+
+
+	    		<div id="profile_show_foruser" ng-show="authentication.user._id">
+				    <div class="profile">
+					    <div class="profile col-md-3">
+					    <div class="page-header TLHeader">
+					        <h2><span data-ng-bind="authentication.user.displayName"></span>'s Profile</h2>
 					    </div>
+					    <img class="center-block" style="padding-top: 15px;" src="modules/core/img/brand/profile_img.png">
+						    <div>
+						        <h2>Username: </h2><h3><span data-ng-bind="authentication.user.username"></span></h3>
+						        <h2>Email:</h2><h3><span data-ng-bind="authentication.user.email"></span></h3>
+						        <h2>Gender: </h2><h3><span data-ng-bind="authentication.user.gender"></span></h3> 
+						        <h2>About <span data-ng-bind="authentication.user.firstName"></span>:</h2><h3><span class="about" data-ng-bind="authentication.user.about"></h3>  
+						    </div>
+						</div>
 					</div>
 				</div>
 			</section>
 	    	<section data-ng-controller="ArticlesController" data-ng-init="find()">
 		    	<section data-ng-controller="PhotosController" data-ng-init="find()">
-					<div class="list-group" ng-show="authentication.user._id">
+					<div class="list-group">
 						<div class="col-lg-4">
 							<h2>Posts</h2>
 						<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
@@ -76,8 +82,6 @@
 							<image src="{{photo.image}}" style="max-width:100%" />
 				        </a>
 				    </br>
-				    </div>
-			    	</div>
 			    </section>
 			</section>
 	    <!-- End of Users Timeline-->
