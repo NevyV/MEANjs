@@ -14,9 +14,9 @@
 						<div id="home_page_login">
 				    	    <div id="instashare">
 				    	   		<img id="instasharelogo" src="modules/core/img/brand/instashare.png" alt="logo" ng-hide="authentication.user._id" />
+						        <form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
 				    	   	</div>
 					       <section class="row" id="home_form" data-ng-controller="AuthenticationController">
-						        <form data-ng-submit="signin()" class="signin form-horizontal" autocomplete="off">
 						        <fieldset>
 									<div class="form-group login_form">
 										<input type="text" id="username" name="username" class="form-control" data-ng-model="credentials.username" placeholder="Username" ng-hide="authentication.user._id">
@@ -38,7 +38,7 @@
 
 	    		<div id="profile_show_foruser" ng-show="authentication.user._id">
 				    <div class="profile">
-					    <div class="profile col-md-3">
+					    <div class="profile col-md-3" style="margin-left: -25px;">
 					    <div class="page-header TLHeader">
 					        <h2><span data-ng-bind="authentication.user.displayName"></span>'s Profile</h2>
 					    </div>
@@ -48,6 +48,7 @@
 						        <h2>Email:</h2><h3><span data-ng-bind="authentication.user.email"></span></h3>
 						        <h2>Gender: </h2><h3><span data-ng-bind="authentication.user.gender"></span></h3> 
 						        <h2>About <span data-ng-bind="authentication.user.firstName"></span>:</h2><h3><span class="about" data-ng-bind="authentication.user.about"></h3>  
+						        <br>
 						    </div>
 						</div>
 					</div>
@@ -56,7 +57,7 @@
 	    	<section data-ng-controller="ArticlesController" data-ng-init="find()">
 		    	<section data-ng-controller="PhotosController" data-ng-init="find()">
 					<div class="list-group">
-						<div class="col-lg-4">
+						<div class="col-lg-4" style="margin-left: 17px;">
 							<h2>Posts</h2>
 						<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
 							<small class="list-group-item-text">
@@ -69,7 +70,7 @@
 							<p class="list-group-item-text" data-ng-bind="article.content"></p>
 						</a>
 					</div>
-					<div class="col-lg-5">
+					<div class="col-lg-5" style="margin-left: 4px;">
 						<h2>Photos</h2>
 				        <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item">
 							<small class="list-group-item-text">
