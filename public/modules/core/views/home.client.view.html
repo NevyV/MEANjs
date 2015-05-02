@@ -38,7 +38,7 @@
 
 	    		<div id="profile_show_foruser" ng-show="authentication.user._id">
 				    <div class="profile">
-					    <div class="profile col-md-3" style="margin-left: -25px;">
+					    <div class="profile col-md-3" >
 					    <div class="page-header TLHeader">
 					        <h2><span data-ng-bind="authentication.user.displayName"></span>'s Profile</h2>
 					    </div>
@@ -57,7 +57,7 @@
 	    	<section data-ng-controller="ArticlesController" data-ng-init="find()">
 		    	<section data-ng-controller="PhotosController" data-ng-init="find()">
 					<div class="list-group">
-						<div class="col-lg-4" style="margin-left: 17px;">
+						<div class="col-lg-4" >
 							<h2>Posts</h2>
 						<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
 							<small class="list-group-item-text">
@@ -70,7 +70,7 @@
 							<p class="list-group-item-text" data-ng-bind="article.content"></p>
 						</a>
 					</div>
-					<div class="col-lg-5" style="margin-left: 4px;">
+					<div class="col-lg-5" >
 						<h2>Photos</h2>
 				        <a data-ng-repeat="photo in photos" data-ng-href="#!/photos/{{photo._id}}" class="list-group-item">
 							<small class="list-group-item-text">
