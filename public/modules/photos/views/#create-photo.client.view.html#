@@ -16,9 +16,9 @@
                 <div class="form-group">
                     <button class="btn btn-default" name="Submit" label="submit" ng-click="create()">Submit!</button>
                 </div>
-                <div data-ng-show="error" class="text-danger">
-                    <strong data-ng-bind="error"></strong>
-                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
 
             </fieldset>
         </form>

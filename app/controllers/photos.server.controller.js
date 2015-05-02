@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 /**
  * Module dependencies.
  */
@@ -12,14 +13,16 @@ var mongoose = require('mongoose'),
  * Create a Photo
  */
 exports.create = function(req, res) {
-  console.log(req.body);
-  console.log(req.files);
+ // console.log(req.body);
+ // console.log(req.files);
   var photo = new Photo(req.body);
   photo.user = req.user;
   photo.likes.push(req.user._id);
-  if(req.files.image) {
-    photo.image =req.files.image.path.substring(7);
-    console.log(photo.image);
+ // if(req.files.image) {
+ //   photo.image =req.files.image.path.substring(7);
+ //   console.log(photo.image);
+  if(req.files.file){
+    photo.image = req.files.file.path.substring(req.files.file.path.indexOf(path.sep)+path.sep.length-1);
   }  else
     photo.image='default.jpg';
   
@@ -31,7 +34,8 @@ exports.create = function(req, res) {
     } else {
       var socketio = req.app.get('socketio'); // makes a socket instance ADDED IN
       socketio.emit('photo.created', photo); // sends the socket event to all current users ADDED IN
-      res.redirect('/#!/photos/'+photo._id); // redirection to '/'jsonp(photo);
+     // res.redirect('/#!/photos/'+photo._id); // redirection to '/'jsonp(photo);
+     res.json({_id:photo._id});
     }
   });
 };
@@ -52,6 +56,7 @@ exports.read = function(req, res) {
 	message: errorHandler.getErrorMessage(err)
       });
     } else 
+      console.log(photo);
       res.jsonp(photo);
   });
 };
