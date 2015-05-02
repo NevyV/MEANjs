@@ -69,6 +69,7 @@
 	overflow: scroll;
   	height: 415px;
   	margin-bottom: 80px;
+  	overflow-y: hidden;
 }
 
 .photos_list_body {
@@ -125,6 +126,7 @@
  	overflow: scroll;
    	height: 410px;
    	margin-bottom: 80px;
+   	overflow-y: hidden;
 }
 
 .please_log_in p {
